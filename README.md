@@ -1,19 +1,20 @@
 # chance-cube
 
-Randomly shows a nation state, along with its capital and other relevant data.
+Randomly shows a UN member state, along with its capital and other relevant data.
 I take no responsibilty for how accurate this is. 
 
 ## Data
-* Name (en)
+* Name (en)	// Done
 * Native Name
-* Capital
+* Capital // Done
 * Languages
-* Population
+* Population // Done
 * Fun Facts
 
 
 ## Todo
-* ~~Add nation data.~~ Filter data for only UN Member states. 
+* ~~Add nation data.~~ Filter data for only UN member states. 
+* Format population numbers
 * Stylin'
 * Custom settings for bg/text colour
 * Reload data on page click

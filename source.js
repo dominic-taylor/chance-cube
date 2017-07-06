@@ -13,8 +13,6 @@
 
 //{name: "New Zealand", capital: "Wellington", pop: '4.5m (2016)', facts:["i live here", "never rains"]},
 
-console.log(data[0].name)
-console.log(data.length)
 
 //window.onload = function() {
 
@@ -27,11 +25,12 @@ var randomNumber = Math.floor(Math.random()*(nations.length));
   document.getElementById('sub').innerHTML= nations[randomNumber].capital 
   document.getElementById('pop').innerHTML= nations[randomNumber].population
 
-  var factList = ""
-  for (var i = 0; i < nations[randomNumber].facts.length; i++) {
-    factList += '<li>'+nations[randomNumber].facts[i]+'</li>'
+  var langList = ""
+  for (var i = 0; i < nations[randomNumber].languages.length; i++) {
+    console.log(nations[randomNumber])
+    langList += '<li>'+nations[randomNumber].languages[i].name+'</li>'
   }
-  document.getElementById('facts').innerHTML = factList
+  document.getElementById('lang').innerHTML = langList
 
 //}
 
