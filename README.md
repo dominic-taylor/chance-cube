@@ -5,9 +5,9 @@ I take no responsibilty for how accurate this is.
 
 ## Data
 * Name (en)	// Done
-* Native Name
+* Native Name // Done
 * Capital // Done
-* Languages
+* Languages // Done
 * Population // Done
 * Fun Facts
 
