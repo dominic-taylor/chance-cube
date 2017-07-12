@@ -1,0 +1,7 @@
+body {
+	margin: none;
+}
+.wrapper {
+	margin: auto;
+	max-width: 50vw;
+}

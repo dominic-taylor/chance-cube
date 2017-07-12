@@ -1,27 +1,36 @@
 
-var nations = [{name: "New Zealand", capital: "Wellington", facts:["i live here", "never rains"]},
-               {name: "Iran", capital: "Tehran", facts:["great", "polite"]},
-               {name: "France", capital: "Paris", facts:["80 m"]},
-               {name: "Portugal", capital: "Lisbon", facts:["All drugs decriminlasied"]},
-               {name: "USA", capital: "Washington, DC", facts:["fucked"]},
-               {name: "Spain", capital: "Madrid", facts:["meah", "never rains"]},
-               {name: "China", capital: "Beijing", facts:["good", "rains"]},
-               {name: "Brazil", capital: "Brasila", facts:["Language: Portguesuse", "Pop: heaps"]}
 
-]
-// {name: "Whatever" capital: "Cap Sity" facts:"population", "offical languages", ""]
-
-var randomNumber = Math.floor(Math.random()*(nations.length));
+var intervalID
+var nations = data
 
 
 window.onload = function() {
-
-  document.getElementById('heading').innerHTML = nations[randomNumber].name
-  document.getElementById('sub').innerHTML= nations[randomNumber].capital
-  var factList = ""
-  for (var i = 0; i < nations[randomNumber].facts.length; i++) {
-    factList += '<li>'+nations[randomNumber].facts[i]+'</li>'
-  }
-  document.getElementById('facts').innerHTML = factList
+ getRandomNation();
+ //uncomment for testing
+ // intervalID = setInterval(function (){getRandomNation()}, 5000);
 
 }
+
+
+
+
+
+  // body...
+function getRandomNation() {
+
+  var randomNumber = Math.floor(Math.random()*(nations.length));
+  document.getElementById('nation').innerHTML = nations[randomNumber].nativeName + ' <br><i> ' + nations[randomNumber].name +'</i>'
+  document.getElementById('capital').innerHTML= nations[randomNumber].capital 
+  document.getElementById('pop').innerHTML= nations[randomNumber].population
+
+  var langList = ""
+  for (var i = 0; i < nations[randomNumber].languages.length; i++) {
+    console.log(nations[randomNumber])
+    langList += '<li>'+nations[randomNumber].languages[i].nativeName+'</li>'
+    langList += '<li>'+nations[randomNumber].languages[i].name+'</li>'
+
+  }
+  document.getElementById('lang').innerHTML = langList
+}
+
+ 
