@@ -2,7 +2,8 @@
 
 var intervalID
 var nations = data
-var colours = ["#001f3f","#0074D9","#7FDBFF","#39CCCC","#3D9970","#2ECC40","#01FF70","#FFDC00"];
+              // All look ok with black text apart from navy: #"#001f3f"
+var colours = ["#0074D9","#7FDBFF","#39CCCC","#3D9970","#2ECC40","#01FF70","#FFDC00"];
 
 window.onload = function() {
 
