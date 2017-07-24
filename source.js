@@ -17,9 +17,12 @@ window.onload = function() {
 function changeColours() {
   // console.log(body[0])
   // body.style.background = "blue"
-  var randomNumber = Math.floor(Math.random()*(colours.length));
-  document.body.style.background = colours[randomNumber];
-
+  var randomColour = colours[Math.floor(Math.random()*(colours.length))]
+  if(randomColour == document.body.style.background){
+    changeColours()
+  }else{
+  document.body.style.background = randomColour;
+  }
 }
 
 
