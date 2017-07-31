@@ -9,8 +9,10 @@ body {
 
 }
 .wrapper {
+    position: relative;
 	margin: auto;
 	max-width: 50vw;
+	height: 100vh;
 }
 .hidden {
 	opacity: 0;

@@ -12,7 +12,7 @@ window.onload = function() {
 
  //uncomment below for testing
  intervalID = setInterval(function (){ 
-    main() }, 2500);
+    main() }, 3000);
 
 }
 
@@ -48,7 +48,7 @@ function loadHidden() {
 
   document.getElementById('nNation').innerHTML = nations[randomNumber].nativeName + ' <br><i> ' + nations[randomNumber].name +'</i>'
   document.getElementById('nCapital').innerHTML= nations[randomNumber].capital 
-  document.getElementById('nPop').innerHTML= nations[randomNumber].population
+  document.getElementById('nPop').innerHTML= nations[randomNumber].population.toLocaleString();
   for (var i = 0; i < nations[randomNumber].languages.length; i++) {
     langList += 
       '<li>'+nations[randomNumber].languages[i].nativeName+' | <i>'+nations[randomNumber].languages[i].name+'</i></li>'
@@ -63,7 +63,7 @@ function loadVisible() {
   var test = 'cNation'
   document.getElementById(test).innerHTML = nations[randomNumber].nativeName + ' <br><i> ' + nations[randomNumber].name +'</i>'
   document.getElementById('cCapital').innerHTML = nations[randomNumber].capital 
-  document.getElementById('cPop').innerHTML= nations[randomNumber].population
+  document.getElementById('cPop').innerHTML= nations[randomNumber].population.toLocaleString();
   for (var i = 0; i < nations[randomNumber].languages.length; i++) {
     langList += 
       '<li>'+nations[randomNumber].languages[i].nativeName+' | <i>'+nations[randomNumber].languages[i].name+'</i></li>'
