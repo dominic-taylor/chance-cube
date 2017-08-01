@@ -15,6 +15,7 @@ I take no responsibility for how accurate this is.
 ## Todo
 * ~~Add nation data.~~ Filter data for only UN member states. 
 * ~~Format population numbers~~
+* ~~Fade data sets in and out over each other.~~
 * Stylin'
 * Custom settings for bg/text colour
 * Reload data on page click
@@ -22,5 +23,5 @@ I take no responsibility for how accurate this is.
 * Live data i.e current temperature, local time.
 
 
-##Long Term
+## Long Term
 * Make a browser extension.

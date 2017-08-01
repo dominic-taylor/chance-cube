@@ -15,6 +15,7 @@ body {
 	height: 100vh;
 }
 .hidden {
+	position:absolute;
 	opacity: 0;
 }
 
@@ -22,12 +23,7 @@ body {
 	opacity: 1;
 }
 
-#currentData h1, #currenttData h2, #cNation, #cCapital, #cPop, #cLang li {
-	/*position:absolute;*/
-	opacity: inherit;
-	transition: opacity .5s linear;
-}
-
+#currentData h1, #currenttData h2, #cNation, #cCapital, #cPop, #cLang li, span,h2,
 #nextData h1,#nextData h2, #nNation, #nCapital, #nPop, #nLang li {
 	/*position:absolute;*/
 	opacity: inherit;
