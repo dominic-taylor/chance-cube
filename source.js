@@ -1,14 +1,10 @@
-
-
 var intervalID
 var nations = data
-              // All look ok with black text apart from navy: "#001f3f"
 var colours = ["#0074D9","#7FDBFF","#39CCCC","#3D9970","#2ECC40","#01FF70","#FFDC00"];
   
 window.onload = function() {
   changeColours()
   loadHidden();
-  loadVisible();
 
  //uncomment below for testing
  intervalID = setInterval(function (){ 
@@ -16,10 +12,7 @@ window.onload = function() {
 
 }
 
-
 function changeColours() {
-  // console.log(body[0])
-  // body.style.background = "blue"
   var randomColour = colours[Math.floor(Math.random()*(colours.length))]
   if(randomColour == document.body.style.background){
     changeColours()
@@ -29,56 +22,43 @@ function changeColours() {
 }
 
 function transition(){
-  console.log('transitioning');
-    var x = document.getElementById("nextData");
-    var y = document.getElementById("currentData");
+    var y = document.getElementsByClassName("y");
+    var x = document.getElementsByClassName("x");
 
-    // var visibleEls = document.getElementsByClassName("visible");
-    x.classList.toggle("hidden");
-    y.classList.toggle('hidden');
-} 
-
+    for (var i = y.length - 1; i >= 0; i--) {
+      y[i].classList.toggle('hidden')
+      x[i].classList.toggle('hidden')      
+    }
+}
   function getNation() {
      return nations[Math.floor(Math.random()*(nations.length))];
   }
-function loadHidden() {
 
-  var langList = ""
-  var randomNumber = Math.floor(Math.random()*(nations.length));
+  function loadHidden() {
+    var hiddenEls = document.getElementsByClassName("hidden")
+    var randomNumber = Math.floor(Math.random()*(nations.length));
 
-  document.getElementById('nNation').innerHTML = nations[randomNumber].nativeName + ' <br><i> ' + nations[randomNumber].name +'</i>'
-  document.getElementById('nCapital').innerHTML= nations[randomNumber].capital 
-  document.getElementById('nPop').innerHTML= nations[randomNumber].population.toLocaleString();
-  for (var i = 0; i < nations[randomNumber].languages.length; i++) {
-    langList += 
-      '<li>'+nations[randomNumber].languages[i].nativeName+' | <i>'+nations[randomNumber].languages[i].name+'</i></li>'
+   
+    for (var i = hiddenEls.length - 1; i >= 0; i--) {
+      if(hiddenEls[i].classList.contains("nation")){ hiddenEls[i].innerHTML = nations[randomNumber].nativeName }
+      if(hiddenEls[i].classList.contains("capital")){ hiddenEls[i].innerHTML = nations[randomNumber].capital }
+      if(hiddenEls[i].classList.contains("pop")){ hiddenEls[i].innerHTML = nations[randomNumber].population.toLocaleString() }
+      if(hiddenEls[i].classList.contains("lang")){ 
+          var langList = ""
+          for (var j = 0; j < nations[randomNumber].languages.length; j++) {
+              langList += 
+                '<li>'+nations[randomNumber].languages[j].nativeName+' | <i>'+nations[randomNumber].languages[j].name+'</i></li>'
+            }
+          hiddenEls[i].innerHTML = langList
+          }
+      }
   }
-    document.getElementById('nLang').innerHTML = langList
-
-
-}
-function loadVisible() {
-  var langList = ""
-  var randomNumber = Math.floor(Math.random()*(nations.length));
-  var test = 'cNation'
-  document.getElementById(test).innerHTML = nations[randomNumber].nativeName + ' <br><i> ' + nations[randomNumber].name +'</i>'
-  document.getElementById('cCapital').innerHTML = nations[randomNumber].capital 
-  document.getElementById('cPop').innerHTML= nations[randomNumber].population.toLocaleString();
-  for (var i = 0; i < nations[randomNumber].languages.length; i++) {
-    langList += 
-      '<li>'+nations[randomNumber].languages[i].nativeName+' | <i>'+nations[randomNumber].languages[i].name+'</i></li>'
-  }
-    document.getElementById('cLang').innerHTML = langList
-
-}
+  
 
 function main() {
-  changeColours()
   loadHidden()
-  loadVisible()
-  
+  changeColours()
   transition()
-
 }
 
  
