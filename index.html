@@ -6,33 +6,24 @@
   <link rel="stylesheet" type="text/css" href="main.css">
 </head>
 <body>
-<div class="wrapper">
-
-  <div class="hidden" id="nextData">
-    <p>next Data</p>
-    <h1>Nation <span id="nNation">Nation</span></h1>
-    <h1>Captial <span id="nCapital">Capital</span></h1>
-    <h1>Population: <span id="nPop"></span></h1>
-    <h2>Languages</h2>
-    <div id="nLang"> 
-      <ul>
-      </ul>
+  <div class="wrapper">
+    <div>
+      <h1>State: <span class="x nation"></span>   <span class="y hidden nation"></span></h1>
+      <h1>English: <span class="x engNation"></span>   <span class="y hidden engNation"></span></h1>
+      <h1>Capital: <span class="x capital"></span> <span class="y hidden capital"></span></h1>
+      <h1>Population: <span class="x pop"></span>  <span class="y hidden pop"></span></h1>
+      <h1>Languages</h1>
+      <div class="x lang"> 
+        <ul>
+        </ul>
+      </div>
+      <div class="y hidden lang"> 
+        <ul>
+        </ul>
+      </div>
     </div>
-   </div>
 
-  <div class="" id="currentData">
-    <p>On page load, display a random nation along with key facts including capital city.</p>
-    <h1>Nation <span id="cNation">Nation</span></h1>
-    <h1>Captial <span id="cCapital">Capital</span></h1>
-    <h1>Population: <span id="cPop"></span></h1>
-    <h2>Languages</h2>
-    <div id="cLang"> 
-      <ul>
-      </ul>
-    </div>
-   </div>
-
- </div>
+  </div>
   <script src="data.js"></script>
   <script src="source.js"></script>
 </body>
