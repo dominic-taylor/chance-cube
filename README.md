@@ -9,7 +9,8 @@ I take no responsibility for how accurate this is.
 * ~~Capital~~ 
 * ~~Languages~~ 
 * ~~Population~~ 
-* Fun Facts
+* Map
+* Flag
 
 
 ## Todo
