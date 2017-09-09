@@ -10,7 +10,7 @@ I take no responsibility for how accurate this is.
 * ~~Languages~~ 
 * ~~Population~~ 
 * Map
-* Flag
+* ~~Flag~~
 
 
 ## Todo

@@ -31,34 +31,42 @@ function transition(){
     x[i].classList.toggle('hidden');     
   }
 }
-function getNation() {
- return nations[Math.floor(Math.random()*(nations.length))];
-}
 
 function loadHidden() {
   var hiddenEls = document.getElementsByClassName("hidden");
   var randomNumber = Math.floor(Math.random()*(nations.length));
-  var test = getNation();
-
   var flag = document.getElementById("flag")
+  flag.style.backgroundImage = "url("+nations[randomNumber].flag+")";
+  setNationData(hiddenEls, randomNumber) 
+}
 
-   flag.style.backgroundImage = "url("+nations[randomNumber].flag+")";
-   
-  for (var i = hiddenEls.length - 1; i >= 0; i--) {
-    if(hiddenEls[i].classList.contains("nation")){ hiddenEls[i].innerHTML = nations[randomNumber].nativeName; }
-    if(hiddenEls[i].classList.contains("engNation")){ hiddenEls[i].innerHTML = nations[randomNumber].name; }
-    if(hiddenEls[i].classList.contains("capital")){ hiddenEls[i].innerHTML = nations[randomNumber].capital; }
-    if(hiddenEls[i].classList.contains("pop")){ hiddenEls[i].innerHTML = nations[randomNumber].population.toLocaleString(); }
-    if(hiddenEls[i].classList.contains("lang")){ 
-      var langList = "";
-      for (var j = 0; j < nations[randomNumber].languages.length; j++) {
-        langList += 
-        '<li>'+nations[randomNumber].languages[j].nativeName+' | <i>'+nations[randomNumber].languages[j].name+'</i></li>';
+function setNationData(elements, index) {
+    for (var i = elements.length - 1; i >= 0; i--) {
+    if(elements[i].classList.contains("nation")){ 
+        setElement(elements[i], nations[index].nativeName);
+    }
+    
+    if(elements[i].classList.contains("engNation")){ 
+      setElement(elements[i], nations[index].name);
+    }
+    if(elements[i].classList.contains("capital")){ 
+        setElement(elements[i], nations[index].capital);
+    }
+    if(elements[i].classList.contains("pop")){ 
+        setElement(elements[i], nations[index].population.toLocaleString());
       }
-      hiddenEls[i].innerHTML = langList;
+    if(elements[i].classList.contains("lang")){ 
+      var langList = "";
+      for (var j = 0; j < nations[index].languages.length; j++) {
+        langList += '<li>'+nations[index].languages[j].nativeName+' | <i>'+nations[index].languages[j].name+'</i></li>';
+      }
+      setElement(elements[i], langList);
     }
   }
- 
+}
+
+function setElement(domEl,data) {
+  domEl.innerHTML = data
 }
 
 function main() {
